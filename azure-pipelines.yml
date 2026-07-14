@@ -1,10 +1,30 @@
-trigger: none
-pool:AZ-Pool-agent
-
 stages:
-  - stage: 
-    jobs:
-      - job: 
-        steps:
-          - 
+- stage:
+
+  jobs:
+  - job: 
+
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: "latest"
+
+    - task: TerraformTask@5
+      displayName: "Terraform Init"
+      inputs:
+        provider: "azurerm"
+        command: "init"
+        backendServiceArm: "infraconnetion"
+        backendAzureRmResourceGroupName: "rg-backend"
+        backendAzureRmStorageAccountName: "backeend151988vk"
+        backendAzureRmContainerName: "statefile"
+        backendAzureRmKey: "statefile1.tfstate"
+
+    - task: TerraformTask@5
+      displayName: "Terraform Validate"
+      inputs:
+        provider: "azurerm"
+        command: "validate"
+
+           
 
