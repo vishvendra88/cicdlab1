@@ -19,16 +19,20 @@ stages:
         backendAzureRmStorageAccountName: "backeend151988vk"
         backendAzureRmContainerName: "statefile"
         backendAzureRmKey: "statefile1.tfstate"
-
-   
     - task: TerraformTask@5
       inputs:
         provider: 'azurerm'
         command: 'plan'
+        environmentServiceNameAzureRM: 'infraconnetion'
     - task: TerraformTask@5
       inputs:
         provider: 'azurerm'
         command: 'apply'
+        environmentServiceNameAzureRM: 'infraconnetion'
+
+   
+
+
 
            
 
