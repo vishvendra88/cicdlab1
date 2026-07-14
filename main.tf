@@ -24,3 +24,9 @@ resource "azurerm_resource_group" "rg-dev" {
     location = "eastus"
   
 }
+
+resource "azurerm_resource_group" "rg-dev1" {
+    name = "rg-dev1-cicd"
+    location = "eastus"
+  
+}
