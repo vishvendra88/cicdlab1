@@ -1,0 +1,10 @@
+trigger: none
+pool:AZ-Pool-agent
+
+stages:
+  - stage: 
+    jobs:
+      - job: 
+        steps:
+          - 
+
